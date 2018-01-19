@@ -1,3 +1,8 @@
+.navbar-toggle {
+  padding: 2rem 10px;
+  border: 0;
+}
+
 .navbar-brand {
   height: 100%;
   padding: 2.5rem 15px;
