@@ -1,3 +1,7 @@
+body {
+  color: #222;
+}
+
 .navbar-toggle {
   padding: 2rem 10px;
   border: 0;
@@ -22,7 +26,7 @@
 
 .greeting {
 	margin: 0;
-	padding: 16rem 0;	
+	padding: 16rem 0;
 	font-size: 4.5rem;
 	font-weight: 600;
 }
@@ -42,7 +46,7 @@ footer {
 }
 
 .footer-social {
-  font-size: 2.25rem;  
+  font-size: 2.25rem;
 }
 
 .footer-social li {
