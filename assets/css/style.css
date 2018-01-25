@@ -59,7 +59,6 @@ body {
 }
 
 .greeting-line-bold {
-  display: block;
   font-weight: 600;
 }
 
