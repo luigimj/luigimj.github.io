@@ -52,7 +52,7 @@
         <h1 class="greeting">
           <div class="greeting-line">Hello!</div>
           <div class="greeting-line">I'm Luigi Mendoza</div>
-          <div class="greeting-line">Front End Developer</div>
+          <div class="greeting-line-bold"><span id="typed"></span></div>
         </h1>
       </section>
 
@@ -135,5 +135,14 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="assets/js/vendor/typed.min.js"></script>
+  <script>
+    var typed = new Typed('#typed', {
+      strings: ["Front End Developer "],
+      typeSpeed: 50,
+      backSpeed: 20,
+      loop: true
+    });
+  </script>
 </body>
 </html>
