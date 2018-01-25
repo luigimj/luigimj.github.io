@@ -1,5 +1,13 @@
 body {
   color: #222;
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.navbar-default {
+  background-color: #fff;
+  border-color: transparent;
 }
 
 .navbar-toggle {
@@ -9,13 +17,14 @@ body {
 
 .navbar-brand {
   height: 100%;
-  padding: 2.5rem 15px;
+  /*padding: 2.5rem 15px;*/
 }
 
 @media (min-width: 768px) {
 	.navbar-nav > li > a {
 		padding-top: 2.5rem;
-		padding-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    font-size: 1.6rem;
 	}
 }
 
@@ -26,8 +35,9 @@ body {
 
 .greeting {
 	margin: 0;
-	padding: 16rem 0;
-	font-size: 4.5rem;
+  padding: 16rem 0;
+  font-family: 'Source Sans Pro', sans-serif;
+	font-size: 5.275rem;
 	font-weight: 600;
 }
 
