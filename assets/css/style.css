@@ -20,7 +20,7 @@ body {
   /*padding: 2.5rem 15px;*/
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
 	.navbar-nav > li > a {
 		padding-top: 2.5rem;
     padding-bottom: 2.5rem;
@@ -37,12 +37,30 @@ body {
 	margin: 0;
   padding: 16rem 0;
   font-family: 'Source Sans Pro', sans-serif;
-	font-size: 5.275rem;
-	font-weight: 600;
+  font-size: 5.275rem;
+  font-weight: 400;
+  transition: font-size .75s ease;
+}
+
+@media only screen and (min-width: 320px) {
+  .greeting {
+    font-size: 3.75rem;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .greeting {
+    font-size: 5.275rem;
+  }
 }
 
 .greeting-line {
   display: block;
+}
+
+.greeting-line-bold {
+  display: block;
+  font-weight: 600;
 }
 
 .back-to-top {
