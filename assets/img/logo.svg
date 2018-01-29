@@ -3,9 +3,12 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#2C2827;}
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#2C2827;}
+	.st1{fill:#FFFFFF;}
+	.st2{font-family:'KohinoorDevanagari-Regular';}
+	.st3{font-size:72px;}
+	.st4{letter-spacing:1;}
 </style>
-<g>
-	<rect class="st0" width="200" height="200"/>
-</g>
+<rect class="st0" width="200" height="200"/>
+<text transform="matrix(0.9615 0 0 1 58.5671 121.5381)" class="st1 st2 st3 st4">lm</text>
 </svg>
