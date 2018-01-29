@@ -5,6 +5,10 @@ body {
   font-weight: 400;
 }
 
+.navbar {
+  margin-bottom: 0;
+}
+
 .navbar-default {
   background-color: #fff;
   border-color: transparent;
@@ -17,21 +21,18 @@ body {
 
 .navbar-brand {
   height: 100%;
-  /*padding: 2.5rem 15px;*/
 }
 
 @media only screen and (min-width: 768px) {
 	.navbar-nav > li > a {
-		padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-    font-size: 1.575rem;
-    font-weight: 600;
+		padding: 3rem 2.5rem;
 	}
 }
 
 .about {
-  min-height: 540px;
-  margin-bottom: 2rem;
+  background: url('/assets/img/undraw-working.svg') no-repeat;
+  background-position: right 56%;
+  background-size: 48%;
 }
 
 .greeting {
