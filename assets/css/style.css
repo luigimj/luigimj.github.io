@@ -25,8 +25,12 @@ body {
 
 @media only screen and (min-width: 768px) {
 	.navbar-nav > li > a {
-		padding: 3rem 2.5rem;
-	}
+		padding: 3rem 2.75rem;
+  }
+
+  .navbar-nav > li:last-child > a {
+    padding-right: 0;
+  }
 }
 
 .about {
