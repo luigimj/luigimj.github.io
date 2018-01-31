@@ -60,7 +60,19 @@ a {
 
 @media only screen and (min-width: 480px) {
   .greeting {
+    font-size: 4.275rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .greeting {
     font-size: 5.275rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .greeting {
+    font-size: 5.675rem;
   }
 }
 
