@@ -27,6 +27,10 @@ a {
   height: 100%;
 }
 
+.navbar-default .navbar-nav>li>a {
+  color: #222;
+}
+
 @media only screen and (min-width: 768px) {
 	.navbar-nav > li > a {
 		padding: 3rem 2.75rem;
@@ -43,6 +47,13 @@ a {
   background-size: 48%;
 }
 
+@media only screen and (max-width: 479px) {
+  .about {
+    background-position: 96% 8%;
+    background-size: inherit;
+  }
+}
+
 .greeting {
 	margin: 0;
   padding: 16rem 0;
@@ -50,6 +61,13 @@ a {
   font-size: 5.275rem;
   font-weight: 400;
   transition: font-size .75s ease;
+}
+
+@media only screen and (max-width: 479px) {
+  .greeting {
+    padding-top: 10rem;
+    padding-bottom: 30rem;
+  }
 }
 
 @media only screen and (min-width: 320px) {
@@ -89,6 +107,11 @@ a {
   text-align: center;
 }
 
+.back-to-top a {
+  /* color: #4285f4; */
+  color: #222;
+}
+
 footer {
   padding: 6rem 0;
   text-align: center;
@@ -100,6 +123,14 @@ footer {
 
 .footer-social li {
   padding: 0 1rem 2.25rem 1rem;
+}
+
+.footer-social-link {
+  color: #222;
+}
+
+.footer-social-link:hover {
+  color: #4285f4;
 }
 
 .footer-text {
