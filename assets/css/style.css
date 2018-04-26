@@ -1,138 +1,203 @@
+html {
+  box-sizing: border-box;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
 body {
   color: #222;
-  font-family: Lato, sans-serif;
+  font-family: 'Montserrat', sans-serif, 'PT Serif', serif;
   font-style: normal;
   font-weight: 400;
 }
 
 a {
-  /* color: #777; */
+
 }
 
-.navbar {
-  margin-bottom: 0;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
 }
 
-.navbar-default {
-  background-color: #fff;
-  border-color: transparent;
+.header-brand {
+  padding: 15px 25px;
 }
 
-.navbar-toggle {
-  padding: 2rem 10px;
-  border: 0;
+.header-nav {
+  padding: 15px 25px;
 }
 
-.navbar-brand {
-  height: 100%;
+.header-nav-item {
+  position: relative;
+  margin: 0 21.72px;
+  padding: 7.416px 0;
+  color: #1d1d1d;
+  text-decoration: none;
+  transition: color .2s ease;
 }
 
-.navbar-default .navbar-nav>li>a {
-  color: #222;
+.header-nav-item::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #b3d4fc;
+  transform-origin: bottom right;
+  transition: transform 0.4s ease-out;
 }
 
-@media only screen and (min-width: 768px) {
-	.navbar-nav > li > a {
-		padding: 3rem 2.75rem;
-  }
+.header-nav-item:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
 
-  .navbar-nav > li:last-child > a {
-    padding-right: 0;
-  }
+.header-nav:hover .header-nav-item:not(:hover) {
+  color: rgba(29,29,29,.3);
 }
 
 .about {
-  background: url('/assets/img/undraw-working.svg') no-repeat;
-  background-position: right 56%;
-  background-size: 48%;
-}
-
-@media only screen and (max-width: 479px) {
-  .about {
-    background-position: 96% 8%;
-    background-size: inherit;
-  }
+  text-align: center;
 }
 
 .greeting {
-	margin: 0;
-  padding: 16rem 0;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 5.275rem;
   font-weight: 400;
-  transition: font-size .75s ease;
+  font-style: normal;
+  font-size: 46px;
+  letter-spacing: 0.92px;
+  line-height: 55.2px;
+  text-transform: none;
 }
 
-@media only screen and (max-width: 479px) {
-  .greeting {
-    padding-top: 10rem;
-    padding-bottom: 30rem;
-  }
+.description {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 2.4px;
+  line-height: 21.6px;
+  text-transform: uppercase;
 }
+/*
+    FONTS
+    1.  Pt Serif, Monserrat
+    2.  Poppins, Roboto
+    5.  Rubik, Martel
+    10. Roboto, Raleway
+    11. Palanquin Dark, Amiri
+    14. Varela Round, Fredoka One
+    15. Advent Pro, Catamaran
+    17. Source Sans, Dosis
+    18. Josefin Sans, Bitter
+    22. Oswald, Varela Round
+    24. Josefin Slab, Raleway
+    25. Hind Vadodara, Catamaran
+    28. Chau Philomene One, Work Sans
+  */
+.pt-serif {font-family: 'Pt Serif'}
+.monserrat {font-family: 'Montserrat'}
+.poppins {font-family: 'Poppins'}
+.roboto {font-family: 'Roboto'}
+.rubik {font-family: 'Rubik'}
+.martel {font-family: 'Martel'}
+.raleway {font-family: 'Raleway'}
+.palanquin-dark {font-family: 'Palanquin Dark'}
+.amiri {font-family: 'Amiri'}
+.varela-round {font-family: 'Varela Round'}
+.fredoka-one {font-family: 'Fredoka One'}
+.advent-pro {font-family: 'Advent Pro'}
+.catamaran {font-family: 'Catamaran'}
+.source-sans {font-family: 'Source Sans Pro'}
+.dosis {font-family: 'Dosis'}
+.josefin-sans {font-family: 'Josefin Sans'}
+.bitter {font-family: 'Bitter'}
+.oswald {font-family: 'Oswald'}
+.josefin-slab {font-family: 'Josefin Slab'}
+.hind-vadodara {font-family: 'Hind Vadodara'}
+.chau-philomene {font-family: 'Chau Philomene One'}
+.work-sans {font-family: 'Work Sans'}
 
-@media only screen and (min-width: 320px) {
-  .greeting {
-    font-size: 3.75rem;
-  }
-}
-
-@media only screen and (min-width: 480px) {
-  .greeting {
-    font-size: 4.275rem;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  .greeting {
-    font-size: 5.275rem;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .greeting {
-    font-size: 5.675rem;
-  }
-}
-
-.greeting-line {
-  display: block;
-}
-
-.greeting-line-bold {
-  font-weight: 600;
-}
-
-.back-to-top {
-  padding: 6rem 0;
-  text-align: center;
-}
-
-.back-to-top a {
-  /* color: #4285f4; */
-  color: #222;
-}
-
-footer {
-  padding: 6rem 0;
-  text-align: center;
+.footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 72px 0;
 }
 
 .footer-social {
-  font-size: 2.25rem;
-}
-
-.footer-social li {
-  padding: 0 1rem 2.25rem 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 35px auto;
 }
 
 .footer-social-link {
-  color: #222;
+	height: 20px;
+	width: 20px;
+	stroke: #222;
+	transition: stroke .3s ease;
 }
 
-.footer-social-link:hover {
-  color: #4285f4;
+.footer-social:hover .footer-social-link:not(:hover) {
+  stroke: rgba(29,29,29,.3);
 }
 
-.footer-text {
-  font-size: 1.25rem;
+.footer-social-link + .footer-social-link {
+	margin-left: 20px;
+}
+
+.footer-social-link .icon {
+	height: 100%;
+	width: 100%;
+	stroke: inherit;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.footer-copyright {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+}
+
+
+.header, .description, .footer-copyright {
+  font-family: 'Montserrat';
+  font-family: 'Varela Round';
+  font-family: 'Catamaran';
+  font-family: 'Raleway';
+  font-family: 'Work Sans';
 }
