@@ -1,3 +1,153 @@
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+
+ .hamburger {
+  padding: 4px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+  outline: 0;
+}
+
+.hamburger:hover {
+  opacity: 0.7;
+}
+
+.hamburger-box {
+  width: 24px;
+  height: 20px;
+  display: inline-block;
+  position: relative;
+}
+
+@media screen and (max-width: 480px) {
+  .hamburger-box {
+
+  }
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 24px;
+  height: 3px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+.is-active .hamburger-inner,
+.is-active .hamburger-inner::before,
+.is-active .hamburger-inner::after {
+  background-color: #fff;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -8px;
+}
+
+.hamburger-inner::after {
+  bottom: -8px;
+}
+
+/*
+ * Spin
+ */
+
+.hamburger--spin .hamburger-inner {
+  transition-duration: 0.22s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin .hamburger-inner::before {
+  transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+}
+
+.hamburger--spin .hamburger-inner::after {
+  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin.is-active .hamburger-inner {
+  transform: rotate(225deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger--spin.is-active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+  transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+}
+
+.hamburger--spin.is-active .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/*
+ * Squeeze
+ */
+.hamburger--squeeze .hamburger-inner {
+  transition-duration: 0.075s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--squeeze .hamburger-inner::before {
+  transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+}
+
+.hamburger--squeeze .hamburger-inner::after {
+  transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--squeeze.is-active .hamburger-inner {
+  transform: rotate(45deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger--squeeze.is-active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+  transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+}
+
+.hamburger--squeeze.is-active .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+  transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
 html {
   box-sizing: border-box;
 }
@@ -24,7 +174,7 @@ body {
 
 body {
   color: #222;
-  font-family: 'Montserrat', sans-serif, 'PT Serif', serif;
+  font-family: 'Work Sans', sans-serif, 'PT Serif', serif;
   font-style: normal;
   font-weight: 400;
 }
@@ -33,28 +183,48 @@ a {
 
 }
 
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
   font-weight: 400;
   font-style: normal;
   font-size: 12px;
+  font-family: 'Work Sans';
   letter-spacing: 2.4px;
   text-transform: uppercase;
 }
 
-.header-brand {
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  padding: 15px 25px;
+  color: #1d1d1d;
+}
+
+.navbar-toggle {
+  padding: 15px 25px;
+  display: none;
+}
+
+.navbar-items {
+  display: flex;
   padding: 15px 25px;
 }
 
-.header-nav {
-  padding: 15px 25px;
-}
+@media screen and (min-width: 768px) {
 
-.header-nav-item {
+.navbar-link {
   position: relative;
   margin: 0 21.72px;
   padding: 7.416px 0;
@@ -63,7 +233,11 @@ a {
   transition: color .2s ease;
 }
 
-.header-nav-item::after {
+.navbar-link:last-child {
+  margin-right: 0;
+}
+
+.navbar-link::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -76,23 +250,72 @@ a {
   transition: transform 0.4s ease-out;
 }
 
-.header-nav-item:hover::after {
+.navbar-link:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
-.header-nav:hover .header-nav-item:not(:hover) {
+.navbar-items:hover .navbar-link:not(:hover) {
   color: rgba(29,29,29,.3);
+}
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding-bottom: 0;
+  }
+
+  .navbar-brand {
+    /* color: #fff; */
+    z-index: 1;
+  }
+
+  .navbar-toggle {
+    display: flex;
+    z-index: 1;
+  }
+
+  .navbar-items {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: #222;
+  }
+
+  .navbar-link {
+    margin: 8px 0;
+    color: #fff;
+    font-size: 21px;
+    line-height: 20px;
+    text-decoration: none;
+	}
+
+	.toggle-show {
+		display: flex;
+	}
 }
 
 .about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px);
+  font-family: 'Work Sans';
   text-align: center;
 }
 
 .greeting {
+  margin: 0;
   font-weight: 400;
   font-style: normal;
   font-size: 46px;
+  font-family: 'Pt Serif', serif;
   letter-spacing: 0.92px;
   line-height: 55.2px;
   text-transform: none;
@@ -108,49 +331,16 @@ a {
 }
 /*
     FONTS
-    1.  Pt Serif, Monserrat
-    2.  Poppins, Roboto
-    5.  Rubik, Martel
-    10. Roboto, Raleway
-    11. Palanquin Dark, Amiri
-    14. Varela Round, Fredoka One
-    15. Advent Pro, Catamaran
-    17. Source Sans, Dosis
-    18. Josefin Sans, Bitter
-    22. Oswald, Varela Round
-    24. Josefin Slab, Raleway
-    25. Hind Vadodara, Catamaran
-    28. Chau Philomene One, Work Sans
+    1.  Work Sans, Pt Serif
   */
-.pt-serif {font-family: 'Pt Serif'}
-.monserrat {font-family: 'Montserrat'}
-.poppins {font-family: 'Poppins'}
-.roboto {font-family: 'Roboto'}
-.rubik {font-family: 'Rubik'}
-.martel {font-family: 'Martel'}
-.raleway {font-family: 'Raleway'}
-.palanquin-dark {font-family: 'Palanquin Dark'}
-.amiri {font-family: 'Amiri'}
-.varela-round {font-family: 'Varela Round'}
-.fredoka-one {font-family: 'Fredoka One'}
-.advent-pro {font-family: 'Advent Pro'}
-.catamaran {font-family: 'Catamaran'}
-.source-sans {font-family: 'Source Sans Pro'}
-.dosis {font-family: 'Dosis'}
-.josefin-sans {font-family: 'Josefin Sans'}
-.bitter {font-family: 'Bitter'}
-.oswald {font-family: 'Oswald'}
-.josefin-slab {font-family: 'Josefin Slab'}
-.hind-vadodara {font-family: 'Hind Vadodara'}
-.chau-philomene {font-family: 'Chau Philomene One'}
-.work-sans {font-family: 'Work Sans'}
 
 .footer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding: 72px 0;
+  padding: 72px 0;
+  font-family: 'Work Sans';
 }
 
 .footer-social {
@@ -193,11 +383,13 @@ a {
   text-transform: uppercase;
 }
 
-
-.header, .description, .footer-copyright {
-  font-family: 'Montserrat';
-  font-family: 'Varela Round';
-  font-family: 'Catamaran';
-  font-family: 'Raleway';
-  font-family: 'Work Sans';
+@media screen and (max-width: 480px) {
+  .greeting {
+    font-size: 36px;
+    line-height: 42px;
+  }
+  .description {
+    font-size: 10px;
+    line-height: 21px;
+  }
 }
