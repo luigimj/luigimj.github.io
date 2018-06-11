@@ -14,6 +14,7 @@
   var navbarItems = document.querySelector('.navbar-items');
 
   hamburger.addEventListener('click', function () {
+    body.classList.toggle('no-scroll');
     hamburger.classList.toggle('is-active');
     navbarItems.classList.toggle('toggle-show');
   });
